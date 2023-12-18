@@ -14,7 +14,7 @@ namespace Fundamentos
             //Tenemos tipos de datos primitivos, los primitivos
             //directamente se escriben
             this.txtNombre.Text = "Soy un texto";
-            this.Width = 180;
+            this.Width = 880;
             //Esto es una excepcion en la norma
             //Tener una clase estructura o final
             //No se instancia la clase, se utiliza.
@@ -22,7 +22,6 @@ namespace Fundamentos
             this.BackColor = Color.ForestGreen;
             //Pongamos que deseamos alinear el texto de una caja
             this.txtNombre.TextAlign = HorizontalAlignment.Right;
-            //comentario
         }
     }
 }
