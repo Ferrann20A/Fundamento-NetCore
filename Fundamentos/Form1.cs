@@ -22,6 +22,7 @@ namespace Fundamentos
             this.BackColor = Color.ForestGreen;
             //Pongamos que deseamos alinear el texto de una caja
             this.txtNombre.TextAlign = HorizontalAlignment.Right;
+            //comentario
         }
     }
 }
