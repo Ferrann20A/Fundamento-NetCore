@@ -29,7 +29,29 @@ namespace Fundamentos
             int rojo = int.Parse(this.txtRojo.Text);
             int verde = int.Parse(this.txtVerde.Text);
             int azul = int.Parse(this.txtAzul.Text);
-            this.BackColor = Color.FromArgb(rojo, verde, azul);
+            if (rojo < 0 || rojo > 255)
+            {
+                MessageBox.Show("Debes introducir un número entre 0 y 255", 
+                    "Error Message", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
+            }else if (verde < 0 || verde > 255)
+            {
+                MessageBox.Show("Debes introducir un número entre 0 y 255",
+                    "Error Message",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }else if (azul < 0 || azul > 255)
+            {
+                MessageBox.Show("Debes introducir un número entre 0 y 255",
+                    "Error Message",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(rojo, verde, azul);
+            }
         }
     }
 }
