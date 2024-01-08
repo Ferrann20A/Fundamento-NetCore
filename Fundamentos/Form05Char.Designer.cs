@@ -115,6 +115,7 @@
             btnAscii.TabIndex = 8;
             btnAscii.Text = "Recorrer ASCII";
             btnAscii.UseVisualStyleBackColor = true;
+            btnAscii.Click += btnAscii_Click;
             // 
             // Form05Char
             // 
