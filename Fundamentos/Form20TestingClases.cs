@@ -27,17 +27,40 @@ namespace Fundamentos
             persona.Nacionalidad = Paises.España;
             persona.Genero = TipoGenero.Masculino;
             persona.MetodoParametrosOpcionales(77);
-            persona.MetodoParametrosOpcionales(88,99);
-            persona.MetodoParametrosOpcionales(1,2,3);
+            persona.MetodoParametrosOpcionales(88, 99);
+            persona.MetodoParametrosOpcionales(1, 2, 3);
             //Solamente queremos enviar el parametro 1 y 3
-            persona.MetodoParametrosOpcionales(1,num3: 88);
+            persona.MetodoParametrosOpcionales(1, num3: 88);
             //persona.GetNombreCompleto();
+            persona.Domicilio = new Direccion("Calle Tajamar, 12", "Madrid");
+            persona.DomicilioVacaciones = new Direccion("Calle Juerga, 12", "Marbella", 65872);
+            this.lstDatosClases.Items.Add("Calle: " + persona.Domicilio.Calle);
+
+            persona[0] = "Ojos azules";
+            persona[1] = " Estiloso....";
+
+            this.lstDatosClases.Items.Add("Descripción[0]: " + persona[0]);
+            this.lstDatosClases.Items.Add("Descripción[1]: " + persona[1]);
 
             this.lstDatosClases.Items.Add(persona.GetNombreCompleto(true));
             this.lstDatosClases.Items.Add(persona.GetNombreCompleto());
             this.lstDatosClases.Items.Add("Edad: " + persona.Edad);
             this.lstDatosClases.Items.Add("Género: " + persona.Genero);
             this.lstDatosClases.Items.Add("Nacionalidad: " + persona.Nacionalidad);
+        }
+
+        private void btnCrearEmpleado_Click(object sender, EventArgs e)
+        {
+            //Empleado emp = new Empleado();
+            ////Al poner la propiedad SalarioMinimo (clase Empleado) como protected no nos permite
+            ////realizar lo siguiente:
+            ////emp.SalarioMinimo = 4000;
+            //this.lstDatosClases.Items.Add("Salario mínimo Empleado: " + emp.GetSalarioMinimo());
+            //this.lstDatosClases.Items.Add("Vacaciones Empleado: " + emp.GetDiasVacaciones());
+            Director dir = new Director();
+            this.lstDatosClases.Items.Add("Salario mínimo Director: " + dir.GetSalarioMinimo());
+            this.lstDatosClases.Items.Add("Vacaciones Director: " + dir.GetDiasVacaciones());
+
         }
     }
 }

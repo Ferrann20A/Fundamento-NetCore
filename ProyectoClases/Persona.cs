@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,43 @@ namespace ProyectoClases
     public enum TipoGenero { Masculino, Femenino }
     public class Persona
     {
+        #region CONSTRUCTORES
+
+        public Persona()
+        {
+            Debug.WriteLine("Constructor VACIO  Persona");
+        }
+
+        //La clase persona solo tiene un unico constructor con parametros
+
+        public Persona(string nombre, string apellidos)
+        {
+            Debug.WriteLine("Constructor con 2 parametros Persona");
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+        }
+
+        #endregion
+
         #region PROPIEDADES
+
+        //
+        private string[] descripciones = new string[3];
+        //Propiedad indizada para almacenar descripciones de una persona
+        public string this[int index]
+        {
+            get { 
+                //Devolvemos la descripcion de una posicion
+                return this.descripciones[index];
+            }
+            set {
+                //Almacenamos el indice del array la  nueva descripcion
+                this.descripciones[index] = value;
+            }
+        }
+
+        public Direccion Domicilio { get; set; }
+        public Direccion DomicilioVacaciones { get; set; }
 
         public string nombre { get; set; }
         public string apellidos { get; set; }
@@ -108,5 +145,7 @@ namespace ProyectoClases
         }
 
         #endregion
+
+
     }
 }
