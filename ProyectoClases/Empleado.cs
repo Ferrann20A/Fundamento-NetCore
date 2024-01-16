@@ -11,6 +11,11 @@ namespace ProyectoClases
     {
         protected int SalarioMinimo { get; set; }
 
+        public override string ToString()
+        {
+            return base.GetNombreCompleto();
+        }
+
         public int GetDiasVacaciones()
         {
             Debug.WriteLine("GetVacaciones() Empleado");

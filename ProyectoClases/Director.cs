@@ -18,8 +18,15 @@ namespace ProyectoClases
         //OVERRIDE
         public new int GetDiasVacaciones()
         {
+            //Necesitamos leer primero la clase base para recuperar las vacaciones de un empleado
+            int vacaciones = base.GetDiasVacaciones();
             Debug.WriteLine("GetVacaciones() Director");
-            return 30;
+            return vacaciones + 8;
+        }
+
+        public int GetDiasVacaciones(int diasExtras)
+        {
+            return 30 + diasExtras;
         }
     }
 }

@@ -51,13 +51,19 @@ namespace Fundamentos
 
         private void btnCrearEmpleado_Click(object sender, EventArgs e)
         {
-            //Empleado emp = new Empleado();
-            ////Al poner la propiedad SalarioMinimo (clase Empleado) como protected no nos permite
-            ////realizar lo siguiente:
-            ////emp.SalarioMinimo = 4000;
-            //this.lstDatosClases.Items.Add("Salario mínimo Empleado: " + emp.GetSalarioMinimo());
-            //this.lstDatosClases.Items.Add("Vacaciones Empleado: " + emp.GetDiasVacaciones());
+            Empleado emp = new Empleado();
+            emp.nombre = "Empleado";
+            emp.apellidos = "empleado";
+            this.lstDatosClases.Items.Add(emp.ToString());
+            //Al poner la propiedad SalarioMinimo (clase Empleado) como protected no nos permite
+            //realizar lo siguiente:
+            //emp.SalarioMinimo = 4000;
+            this.lstDatosClases.Items.Add("Salario mínimo Empleado: " + emp.GetSalarioMinimo());
+            this.lstDatosClases.Items.Add("Vacaciones Empleado: " + emp.GetDiasVacaciones());
             Director dir = new Director();
+            dir.nombre = "Director";
+            dir.apellidos = "dir";
+            this.lstDatosClases.Items.Add(dir.ToString());
             this.lstDatosClases.Items.Add("Salario mínimo Director: " + dir.GetSalarioMinimo());
             this.lstDatosClases.Items.Add("Vacaciones Director: " + dir.GetDiasVacaciones());
 
